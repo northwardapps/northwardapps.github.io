@@ -1,0 +1,19 @@
+title: Northward Apps
+description: Small, useful apps with lifetime pricing — no ads, no subscriptions.
+url: https://northwardapps.com
+baseurl: ""
+
+markdown: kramdown
+permalink: /blog/:slug/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - .gitignore
