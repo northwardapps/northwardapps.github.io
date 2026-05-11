@@ -12,8 +12,9 @@ description: Small, useful apps with lifetime pricing — no ads, no subscriptio
   {%- for post in site.posts -%}
   <li style="margin: 0 0 24px; padding-bottom: 20px; border-bottom: 1px solid #e5e7ef;">
     <a href="{{ post.url | relative_url }}" style="font-size: 1.15rem; font-weight: 600;">{{ post.title }}</a>
-    {%- if post.meta_description -%}
-      <p style="margin: 6px 0 0; color: #5a5a6e;">{{ post.meta_description }}</p>
+    {%- assign teaser = post.meta_description | default: post.description -%}
+    {%- if teaser -%}
+      <p style="margin: 6px 0 0; color: #5a5a6e;">{{ teaser }}</p>
     {%- endif -%}
     {%- assign updated = post.last_updated | default: post.date -%}
     {%- if updated -%}
