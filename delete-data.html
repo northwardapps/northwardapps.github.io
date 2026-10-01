@@ -26,7 +26,13 @@ a { color: #1B2B5E; }
 <p>Granted does not require an account. Your study progress is stored locally on your device. You can delete all locally stored data at any time by uninstalling the app or clearing app storage in your device settings.</p>
 
 <h2>What we collect</h2>
-<p>Granted uses RevenueCat to process in-app purchases. RevenueCat receives an anonymous app-generated identifier and your purchase history (product purchased, transaction date) to enable the "Restore Purchases" feature across devices. No name, email, or personal identifier is associated with this data.</p>
+<p>Granted does not require an account. Study progress stays on your device.</p>
+<p>The app also sends data to three processors, described in the <a href="/privacy.html">privacy policy</a>:</p>
+<ul>
+  <li><strong>PostHog</strong> (usage analytics): an anonymous install id, the events listed in the privacy policy, device details, and the IP address (newer builds ask PostHog not to derive a location from it). <a href="https://posthog.com/privacy">PostHog privacy policy</a>.</li>
+  <li><strong>Sentry</strong> (crash reports and performance traces): crash and trace data, an installation id, and the IP address on the upload. <a href="https://sentry.io/privacy/">Sentry privacy policy</a>.</li>
+  <li><strong>RevenueCat</strong> (purchase state): an anonymous app-generated identifier and your purchase history (product purchased, transaction date) so Restore Purchases works. No name or email is associated with this data. <a href="https://www.revenuecat.com/privacy">RevenueCat privacy policy</a>.</li>
+</ul>
 
 <h2>How to request deletion</h2>
 <ol>
@@ -38,6 +44,8 @@ a { color: #1B2B5E; }
 <h2>What gets deleted</h2>
 <ul>
   <li>All RevenueCat purchase records associated with your anonymous ID</li>
+  <li>The PostHog person for that install</li>
+  <li>Sentry events for that install</li>
   <li>Any support correspondence</li>
 </ul>
 
@@ -46,7 +54,7 @@ a { color: #1B2B5E; }
 
 <div class="footer">
   <p>Northward Apps · <a href="/privacy.html">Privacy Policy</a> · <a href="/">Support</a></p>
-  <p>Last updated: April 29, 2026</p>
+  <p>Last updated: October 1, 2026</p>
 </div>
 
 </body>
