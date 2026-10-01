@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Granted – Privacy Policy</title>
   <style>
-    body { font-family: -apple-system, sans-serif; max-width: 700px; 
+    body { font-family: -apple-system, sans-serif; max-width: 700px;
            margin: 40px auto; padding: 0 20px; color: #333; }
     h1 { color: #1B2B5E; }
     h2 { color: #1B2B5E; margin-top: 30px; }
-    p { line-height: 1.6; }
+    p, li { line-height: 1.6; }
   </style>
 </head>
 <body>
@@ -17,49 +17,74 @@
 <h1>Privacy Policy</h1>
 <p><strong>App:</strong> Granted: US Citizenship Test<br>
 <strong>Developer:</strong> Northward Apps (Christian Kjeldsen)<br>
-<strong>Last updated:</strong> April 15, 2026</p>
+<strong>Last updated:</strong> October 1, 2026</p>
 
 <h2>Overview</h2>
-<p>Granted is designed with privacy as a default. We do not collect, 
-store, or share your personal information. The app works entirely 
-on your device.</p>
+<p>Granted stores your study progress on your device. The app also sends usage analytics to PostHog, crash reports and performance traces to Sentry, and purchase state to RevenueCat. Those three services are described below. Northward Apps does not sell your data and does not show ads. There is no account.</p>
 
-<h2>Data We Do NOT Collect</h2>
-<p>We do not collect your name, email, location, or any identifying 
-information. We do not track your usage or behavior. We do not 
-use analytics tools. We do not show ads. We do not sell data.</p>
+<h2>Data that stays on your device</h2>
+<p>The following stays in local storage on the device and is not sent to Northward Apps, PostHog, Sentry, or RevenueCat:</p>
+<ul>
+  <li>Journey answers, checklist progress, and study scores</li>
+  <li>The civics-test version you selected</li>
+  <li>The ZIP code saved for the elected-officials lookup</li>
+  <li>A receipt number you type, until you choose to look it up</li>
+</ul>
+<p>Deleting the app, or clearing the app's storage, deletes this local data.</p>
 
-<h2>Data Stored on Your Device</h2>
-<p>The following is stored locally on your device only and never 
-transmitted to us: checklist progress, test results, ZIP code 
-for local officials lookup, and your N-400 filing date selection. 
-You can clear this data at any time by deleting the app.</p>
+<h2>PostHog — usage analytics</h2>
+<p>We use PostHog to see which parts of the app people use, so we can fix and improve it. PostHog stays in the app. The project host is https://us.i.posthog.com (PostHog Cloud, United States).</p>
+<p><strong>What it receives.</strong> An anonymous distinct id created by the PostHog SDK. The app never calls identify and does not send your name or email. Events the app records: app opened, journey started (a situation key, not your answers), journey event logged (the event type only), journey stage added or removed (a stage id), journey shared, journey PDF exported, reading practice started, writing practice started, writing paywall shown, and writing answer checked (whether it was correct, not the sentence you typed). Automatic lifecycle events are also sent, because that SDK option is left on: Application Installed, Application Updated, Application Opened, Application Became Active, and Application Backgrounded, plus the app version. The SDK also sends device and operating-system details. Starting with the current build, the app asks PostHog not to derive a location from your IP address. The app does not request location permission and does not read GPS. That setting does not by itself stop the IP from reaching PostHog. Installs built before this change still send events without it, so PostHog can still derive a location from those. Sentry still receives the IP on crash and trace uploads and can derive an approximate location from it. Session replay is not enabled.</p>
+<p><strong>Why.</strong> To understand feature use and improve the app.</p>
+<p><strong>Linked to you.</strong> Yes, to that anonymous install id. It is not linked to your name or email.</p>
+<p><strong>How long it is kept.</strong> PostHog says event retention is set by the plan and cannot be shortened in the product. PostHog's published retention is 1 year on the free plan and 7 years on a paid plan (<a href="https://posthog.com/pricing">posthog.com/pricing</a>). Confirm which plan the Granted project uses in PostHog. Deleting a person in PostHog is how a deletion request for that distinct id is completed. Event deletion runs asynchronously.</p>
+<p><strong>PostHog's privacy policy:</strong> <a href="https://posthog.com/privacy">https://posthog.com/privacy</a></p>
 
-<h2>Payments</h2>
-<p>In-app purchases are processed entirely by Apple App Store or 
-Google Play. Northward Apps never receives or stores your payment 
-information.</p>
+<h2>Sentry — crash reports and performance traces</h2>
+<p>We use Sentry to learn about crashes and slow screens. About one in five sessions also sends a performance trace.</p>
+<p><strong>What it receives.</strong> Crash reports (the error, stack trace, app version, operating system, and device model), performance traces, a Sentry installation identifier, and the IP address on the upload. Sentry can derive an approximate location from that IP. The app does not attach your name or email.</p>
+<p><strong>Why.</strong> To find and fix crashes and performance problems.</p>
+<p><strong>Linked to you.</strong> Yes, to the Sentry installation id. Not to your name or email.</p>
+<p><strong>How long it is kept.</strong> Sentry's published retention depends on the plan and the data type, and it is fixed when the event is ingested. For error events, Sentry publishes 30 days on the Developer plan and 90 days on Team, Business, and Enterprise plans. Enterprise contracts can differ. Performance spans are often 30 days, or 90 days on some Team and Business plans. Confirm the Granted project's plan in Sentry. Source: <a href="https://docs.sentry.io/security-legal-pii/security/data-retention-periods/">Sentry data retention periods</a>.</p>
+<p><strong>Sentry's privacy policy:</strong> <a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></p>
 
-<h2>Immigration Information Disclaimer</h2>
-<p>Granted provides general information only. Nothing in this app 
-constitutes legal advice. Immigration law changes frequently. 
-Always verify requirements at uscis.gov and consult a licensed 
-immigration attorney for your specific situation. Granted is not 
-affiliated with USCIS or any government agency.</p>
+<h2>RevenueCat — purchase state</h2>
+<p>The paid unlock is a one-time lifetime purchase, not a subscription. Apple or Google charges you. RevenueCat records whether this install has the lifetime entitlement so the app can unlock study features and so Restore Purchases works. The app does not see your card number.</p>
+<p><strong>What it receives.</strong> An anonymous RevenueCat app user id, the platform (iOS or Android), the product, the lifetime entitlement, and the store transaction or receipt token RevenueCat uses to confirm the purchase with Apple or Google.</p>
+<p><strong>Why.</strong> To deliver the purchase and restore it on another install.</p>
+<p><strong>Linked to you.</strong> Yes, to that anonymous app user id. Not to your name or email.</p>
+<p><strong>How long it is kept.</strong> RevenueCat keeps the purchase record so restore can work, until we process a deletion request. We aim to complete deletion requests within 30 days. Anonymized transaction records may be kept for tax, accounting, and fraud prevention. This policy does not state a separate RevenueCat retention period beyond that.</p>
+<p><strong>RevenueCat's privacy policy:</strong> <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></p>
+<p>Apple and Google receive the payment itself, including the payment method. Northward Apps does not. <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+
+<h2>Other transfers you start yourself</h2>
+<p>These leave the device only when you tap the control, and Northward Apps does not receive them:</p>
+<ul>
+  <li><strong>Case status.</strong> The receipt number you typed is placed in a link to egov.uscis.gov, which opens in the browser. USCIS receives that number. Granted does not receive the case result.</li>
+  <li><strong>Elected officials.</strong> The saved ZIP code is placed in a Google search URL. Google receives that search. <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
+  <li><strong>Links</strong> to this privacy policy, support@northwardapps.com, ailalawyer.com, and the official source pages listed in the app.</li>
+  <li><strong>Share and PDF export.</strong> The system share sheet sends the file to whatever app you pick.</li>
+  <li><strong>Store review.</strong> The operating system's review dialog may send a rating to Apple or Google. The app does not receive the text of the review.</li>
+</ul>
+<p>Reading and writing practice uses on-device speech. It is not uploaded.</p>
+
+<h2>What we do not collect</h2>
+<p>We do not collect your name, email address, phone number, postal address, contacts, photos, or precise GPS location. We do not use an advertising SDK. We do not sell data. We do not use the data above to track you across other companies' apps or to share it with data brokers.</p>
+
+<h2>Immigration information</h2>
+<p>Granted provides general information only. Nothing in this app constitutes legal advice. Immigration law changes frequently. Always verify requirements at uscis.gov and consult a licensed immigration attorney for your specific situation. Granted is not affiliated with USCIS or any government agency.</p>
 
 <h2>Children</h2>
-<p>Granted is not directed at children under 13 and does not 
-knowingly collect information from children.</p>
+<p>Granted is not directed at children under 13 and does not knowingly collect information from children. The app is meant for adults preparing for naturalization.</p>
+
+<h2>Deletion</h2>
+<p>Uninstalling the app deletes the data stored on the device. To ask us to delete the PostHog, Sentry, or RevenueCat data described above, email <a href="mailto:support@northwardapps.com">support@northwardapps.com</a> with the subject "Data Deletion Request — Granted", the platform (iOS or Android), and the approximate purchase date if you bought the unlock. See our <a href="/delete-data.html">data deletion page</a>. We will process the request within 30 days and confirm by email.</p>
 
 <h2>Changes</h2>
-<p>We may update this policy. Continued use of the app after 
-changes constitutes acceptance.</p>
+<p>We may update this policy. The date at the top is the date of the latest version. Continued use of the app after a change means you accept the updated policy.</p>
 
 <h2>Contact</h2>
-<p>Questions: <a href="mailto:support@northwardapps.com">
-support@northwardapps.com</a></p>
-
-  <p>To request deletion of any data we hold about you, see our <a href="/delete-data.html">data deletion page</a>.</p>
+<p>Questions: <a href="mailto:support@northwardapps.com">support@northwardapps.com</a></p>
 
 </body>
 </html>
